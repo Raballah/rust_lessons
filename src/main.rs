@@ -1,22 +1,20 @@
-// A mini-practical task regarding mutability and type casting. 
-// Analytical logic, result known so, a report-based format. 
-
-fn percentage_calculation(today_number: i32, total: i32) ->f64 {
-    if total == 0 {
-        0.00 // accounting for dvision by zero (0).
-    } else {
-        // Cast to f64 for decimal precision.
-        (today_number as f64 / total as f64) * 100.0
-    }
-}
+// Now, this session entails building a student profile initializer,
+// meant for a Rust-based academic system.
+//Project constraints: Each student profile must contain: Student ID number, Age, GPA, 
+// Active Status, Grade Letter.
 
 fn main() {
-    let today_number = 17;
-    let total = 26;
+    let student_id: u32 = 11007; // Unsigned integer, non-negative integer, annotated not casted.
+    let age: u32 = 19;
+    let gpa: f64 = 3.78;
+    let active_status: bool = true;
+    let grade: char = 'A';
 
-    let percentage_attendance = percentage_calculation(today_number, total);
+    let student_profile = (student_id, age, gpa, active_status, grade);
 
-    println!("The number of students expected to attend the study session: {}", total);
-    println!("Today's number of attendance: {}", today_number);
-    println!("The percentage attendance today: {:.1}%", percentage_attendance);
+    println!("Student ID: {}", student_profile.0);
+    println!("Age: {}", student_profile.1);
+    println!("GPA: {:.2}", student_profile.2);
+    println!("Active Status: {}", student_profile.3);
+    println!("Grade: {}", student_profile.4);
 }
